@@ -12,6 +12,35 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  CustomAppBar(),
+                  SizedBox(height: 15,),
+                  CustomBookListView(),
+                  SizedBox(height: 50,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14.0),
+                    child: Text("Best Seller",style: Styles.titleMedium,),
+                  ),
+                  BookSellerListView()
+                ],
+              ),
+          ),
+      
+      
+        ],
+      
+      ),
+    );
+  }
+}
+/*
+* Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -28,6 +57,5 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
+    )
+* */

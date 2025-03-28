@@ -6,11 +6,11 @@ class BookSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        scrollDirection: Axis.vertical,
-          itemBuilder: (context, index) => BestSellerWidget(),
-      itemCount: 15,),
-    );
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      scrollDirection: Axis.vertical,
+        itemBuilder: (context, index) => BestSellerWidget(),
+    itemCount: 15,);
   }
 }
